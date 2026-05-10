@@ -4,7 +4,7 @@
   <br />
   <h3>MODUL 03-04 - Mobile <br> Pengenalan Flutter  </h3>
   <br />
-  <img src="asset\logo.png" alt="Logo" width="300"> 
+  <img src="images\logo.png" alt="Logo" width="300"> 
   <br />
   <br />
   <br />
@@ -186,8 +186,8 @@ Untuk mengatur tata letak yang presisi, kode ini memanfaatkan widget Positioned 
 
 ---
 ## 2. Screenshoot Hasil
-![1](asset\1.jpeg)
-![2](asset\2.jpeg)
-![3](asset\3.jpeg)
-![4](asset\4.jpeg)
-![5](asset\5.jpeg)
+![1](images\gambar1.jpeg)
+![2](images\gambar2.jpeg)
+![3](images\gambar3.jpeg)
+![4](images\gambar4.jpeg)
+![5](images\gambar5.jpeg)
