@@ -53,18 +53,9 @@ Widget UI
 <hr>
 
 ### Dasar Teori
-Pertukaran Data Asinkron Menggunakan AJAX
-Sistem mengimplementasikan teknologi AJAX untuk memfasilitasi pertukaran data antara server dan browser secara asinkron di latar belakang. Mekanisme ini memungkinkan pembaruan konten halaman web secara dinamis tanpa perlu melakukan pemuatan ulang (reload) secara keseluruhan, sehingga menciptakan antarmuka yang lebih responsif, cepat, dan efisien bagi pengguna.
+Flutter merupakan sebuah framework modern yang menggunakan bahasa pemrograman Dart dengan prinsip utama bahwa setiap elemen antarmuka pengguna adalah sebuah widget. Dalam pengembangan aplikasi pengaturan tata letak atau layouting menjadi pondasi utama dalam menciptakan pengalaman pengguna yang baik. Widget dasar seperti Container memegang peranan penting sebagai elemen pembungkus yang fleksibel untuk mengatur dimensi, dekorasi, hingga jarak antar komponen. Selain itu terdapat widget Stack yang memungkinkan pengembang untuk mengatur posisi elemen secara bertumpuk sehingga memberikan kebebasan dalam menempatkan komponen secara berlapis sesuai dengan kebutuhan desain visual yang kompleks.
 
-Manajemen Database dan Automasi Pengisian Data (Seeder)
-Penyimpanan informasi dikelola melalui basis data terstruktur untuk menjamin integritas data. Dalam proses pengembangannya, sistem menggunakan fitur Database Seeding untuk mengautomasi pengisian data awal melalui skrip kode. Hal ini meminimalkan input manual yang repetitif, mempercepat fase pengujian, serta memastikan ketersediaan data contoh yang konsisten sesuai dengan skema tabel yang dirancang.
-
-Arsitektur Pemrograman Berbasis Objek dan Model Data
-Pengembangan aplikasi menggunakan pendekatan pemrograman berbasis objek, di mana setiap entitas database direpresentasikan melalui sebuah Model. Arsitektur ini memudahkan pengelolaan logika sistem dan manipulasi data secara lebih terorganisir. Dengan memisahkan antara struktur data dan logika pemrosesan, sistem menjadi lebih modular, aman dari celah keamanan dasar, dan mudah untuk dikembangkan di masa mendatang.
-
-Antarmuka Responsif dan Pengalaman Pengguna (UI/UX)
-Perancangan antarmuka dititikberatkan pada fleksibilitas tata letak agar tampilan aplikasi tetap optimal saat diakses melalui berbagai perangkat, baik ponsel maupun komputer. Fokus utama dari desain ini adalah memberikan navigasi yang intuitif dan visual yang konsisten, sehingga administrator dapat mengelola konten portofolio dengan mudah melalui panel kendali yang terstruktur secara logis.
-
+Selain pengaturan posisi statis Flutter juga menyediakan berbagai solusi untuk menampilkan kumpulan data secara dinamis dan efisien. Widget ListView dan GridView merupakan dua komponen utama yang digunakan untuk menangani konten yang dapat digulung (scrollable). ListView berfungsi untuk menyusun daftar secara linier sementara GridView mengatur elemen dalam format baris dan kolom. Untuk menjaga performa aplikasi penggunaan konstruktor seperti .builder dan .separated sangat disarankan karena sistem hanya akan memproses elemen yang terlihat pada layar sehingga penggunaan memori tetap optimal meskipun aplikasi menangani data dalam jumlah besar. Pemahaman mendalam mengenai kombinasi widget-widget ini sangat krusial bagi pengembang untuk membangun aplikasi yang tidak hanya fungsional, tetapi juga memiliki performa yang stabil.kode yang rapi.
 
 ## Container
 ![Halaman ](asset/container.png)
