@@ -613,8 +613,6 @@ flutter run
 
 ### Output:
 
-> 📸 *Tambahkan screenshot hasil tampilan aplikasi di sini*
-
 ![Output SnapFood](aset/snapfood_output.png)
 
 ---
@@ -731,10 +729,4 @@ ListView.separated(
 
 ---
 
-## 4. Kesimpulan
 
-Pada praktikum Modul 3 & 4 ini telah berhasil dibuat aplikasi **SnapFood** menggunakan Flutter dengan tema food discovery. Semua widget yang diwajibkan telah diimplementasikan, yaitu `Container`, `Stack`, `GridView`, `ListView`, `ListView.builder`, dan `ListView.separated`. Masing-masing widget memiliki kegunaan yang berbeda dalam membangun antarmuka yang kaya dan responsif. Penggunaan `StatefulWidget` memungkinkan interaksi dinamis seperti pergantian kategori aktif pada filter horizontal. Flutter terbukti mampu menghasilkan tampilan mobile yang modern dan menarik hanya dengan satu codebase Dart.
-=======
-# Modul_03-04_Mobile-
-Kumpulkan tugas sesuai dengan ketentuan seperti biasa
->>>>>>> ac7fd59ca70531748cd9bfe2d364639992dfdc6d
