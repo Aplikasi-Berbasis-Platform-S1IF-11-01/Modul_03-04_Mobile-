@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br>APLIKASI BERBASIS PLATFORM</h1>
   <br />
-  <h3>MODUL 4 <br> WIDGET UI</h3>
+  <h3>MODUL 4 <br> WIDGET</h3>
   <br />
   <img src="assets/logo.jpeg" alt="Logo" width="300"> 
   <br />
