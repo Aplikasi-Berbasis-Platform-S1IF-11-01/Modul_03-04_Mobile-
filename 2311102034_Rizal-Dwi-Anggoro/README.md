@@ -2,7 +2,7 @@
   <br />
   <h1>LAPORAN PRAKTIKUM <br>APLIKASI BERBASIS PLATFORM</h1>
   <br />
-  <h3>MODUL 04 - Mobile <br> Pengenalan Flutter  </h3>
+  <h3>MODUL 03-04 - Mobile <br> Pengenalan Flutter  </h3>
   <br />
   <img src="assets\logo_telkom.jpeg" alt="Logo" width="300"> 
   <br />
