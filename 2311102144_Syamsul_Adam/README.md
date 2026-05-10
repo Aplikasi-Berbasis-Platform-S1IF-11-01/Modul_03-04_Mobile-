@@ -552,12 +552,9 @@ Pada tampilan utama, widget disusun menggunakan SingleChildScrollView dan Column
 ---
 
 ## Screenshot Hasil
-<img src="1.png" width="250">
+<img src="1.png" width="450">
 
-<img src="2.png" width="250">
+<img src="2.png" width="450">
 
-<img src="3.png" width="250">
-=======
-# Modul_03-04_Mobile-
-Kumpulkan tugas sesuai dengan ketentuan seperti biasa
->>>>>>> eb55a600ccdd004197093e285cd0164a15cd0d95
+<img src="3.png" width="450">
+
