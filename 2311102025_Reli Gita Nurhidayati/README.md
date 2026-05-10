@@ -1,10 +1,10 @@
-
+<div align="center">
 # LAPORAN PRAKTIKUM
 # APLIKASI BERBASIS PLATFORM
 
 
 ## MODUL 3 & 4 — MOBILE
-<div align="center">
+
 
 <img src="Logo_Telkom.png" alt="Logo Telkom University" width="150"/>
 ---
@@ -31,17 +31,6 @@ Apri Pandu Wicaksono · Rangga Pradarrell Fathi
 **2026**
 
 </div>
-
----
-
-## 📋 Daftar Isi
-
-- [A. Dasar Teori](#a-dasar-teori)
-- [B. Deskripsi Tugas](#b-deskripsi-tugas)
-- [C. Kode Program](#c-kode-program)
-- [D. Hasil Tampilan](#d-hasil-tampilan)
-- [E. Kesimpulan](#e-kesimpulan)
-- [F. Referensi](#f-referensi)
 
 ---
 
