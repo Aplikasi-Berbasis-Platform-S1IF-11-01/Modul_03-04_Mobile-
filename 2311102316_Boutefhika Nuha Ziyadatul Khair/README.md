@@ -658,8 +658,8 @@ Stack(
 ---
 
 ## Screenshot Hasil
-![Gambar1](Images/gambar1.png)
+![Gambar1](Images/gambar1.jpeg)
 
-![Gambar2](Images/gambar2.png)
+![Gambar2](Images/gambar2.jpeg)
 
-![Gambar3](Images/gambar3.png)
+![Gambar3](Images/gambar3.jpeg)
