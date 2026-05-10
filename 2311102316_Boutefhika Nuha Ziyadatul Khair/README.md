@@ -658,8 +658,8 @@ Stack(
 ---
 
 ## Screenshot Hasil
-<img src="Images/gambar1.jpeg" width="300" height="200">
+<img src="Images/gambar1.jpeg" width="250">
 
-<img src="Images/gambar2.jpeg" width="300" height="200">
+<img src="Images/gambar2.jpeg" width="250">
 
-<img src="Images/gambar3.jpeg" width="300" height="200">
+<img src="Images/gambar3.jpeg" width="250">
