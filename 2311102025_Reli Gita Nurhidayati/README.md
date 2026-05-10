@@ -92,7 +92,7 @@ Pada praktikum Modul 4 ini, mahasiswa diminta untuk membuat satu project Flutter
 
 ### 1. Container (Kotak Berwarna)
 
-\`\`\`dart
+```dart
 Container(
   margin: const EdgeInsets.symmetric(horizontal: 16),
   height: 160,
@@ -100,20 +100,23 @@ Container(
     color: const Color(0xFF16213E),
     borderRadius: BorderRadius.circular(16),
     border: Border.all(
-      color: const Color(0xFFE8A838).withOpacity(0.4)),
+      color: const Color(0xFFE8A838).withOpacity(0.4),
+    ),
   ),
-  child: Stack( ... ),
+  child: Stack(
+    children: [],
+  ),
 )
-\`\`\`
+```
 
-**Penjelasan:**
-Widget \`Container\` digunakan sebagai banner "Now Trending" dengan \`BoxDecoration\` yang mengatur warna latar gelap (\`0xFF16213E\`), sudut melengkung 16 piksel, dan border berwarna emas transparan. Container ini sekaligus menjadi wrapper untuk widget \`Stack\` di dalamnya.
+**Penjelasan:**  
+Widget `Container` digunakan sebagai banner "Now Trending" dengan `BoxDecoration` yang mengatur warna latar gelap (`0xFF16213E`), sudut melengkung 16 piksel, dan border berwarna emas transparan. Container ini sekaligus menjadi wrapper untuk widget `Stack` di dalamnya.
 
 ---
 
 ### 2. GridView (6 Item Genre)
 
-\`\`\`dart
+```dart
 GridView.count(
   crossAxisCount: 3,
   shrinkWrap: true,
@@ -126,46 +129,64 @@ GridView.count(
     color: g['color'],
   )).toList(),
 )
-\`\`\`
+```
 
-**Penjelasan:**
-\`GridView.count\` dengan \`crossAxisCount: 3\` membuat tampilan 3 kolom berisi 6 genre film. Penggunaan \`shrinkWrap: true\` dan \`NeverScrollableScrollPhysics()\` mencegah konflik scroll dengan \`SingleChildScrollView\` pembungkusnya.
+**Penjelasan:**  
+`GridView.count` dengan `crossAxisCount: 3` membuat tampilan 3 kolom berisi 6 genre film. Penggunaan `shrinkWrap: true` dan `NeverScrollableScrollPhysics()` mencegah konflik scroll dengan `SingleChildScrollView` pembungkusnya.
 
 ---
 
 ### 3. ListView (3 Item Statis)
 
-\`\`\`dart
+```dart
 ListView(
   padding: const EdgeInsets.symmetric(horizontal: 16),
   children: const [
-    _TopMovieCard(rank: 1, title: 'Oppenheimer',
+    _TopMovieCard(
+      rank: 1,
+      title: 'Oppenheimer',
       desc: 'Christopher Nolan masterpiece',
-      color: Color(0xFFE8A838)),
-    _TopMovieCard(rank: 2, title: 'Dune: Part Two',
+      color: Color(0xFFE8A838),
+    ),
+    _TopMovieCard(
+      rank: 2,
+      title: 'Dune: Part Two',
       desc: 'Epic sci-fi continuation',
-      color: Color(0xFFD4813A)),
-    _TopMovieCard(rank: 3, title: 'Poor Things',
+      color: Color(0xFFD4813A),
+    ),
+    _TopMovieCard(
+      rank: 3,
+      title: 'Poor Things',
       desc: 'Surreal fantasy drama',
-      color: Color(0xFF6B8FD4)),
+      color: Color(0xFF6B8FD4),
+    ),
   ],
 )
-\`\`\`
+```
 
-**Penjelasan:**
-\`ListView\` statis berisi 3 widget \`_TopMovieCard\` yang menampilkan Top 3 Must Watch. Setiap card menampilkan nomor ranking berwarna, judul film, deskripsi singkat, dan ikon play. Cocok untuk daftar yang isinya tidak berubah.
+**Penjelasan:**  
+`ListView` statis berisi 3 widget `_TopMovieCard` yang menampilkan Top 3 Must Watch. Setiap card menampilkan nomor ranking berwarna, judul film, deskripsi singkat, dan ikon play.
 
 ---
 
 ### 4. ListView.builder (Dari Data Array)
 
-\`\`\`dart
+```dart
 const List<Movie> movieList = [
-  Movie(title: 'Oppenheimer', genre: 'Drama',
-        rating: 8.9, year: '2023', color: Color(0xFFE8A838)),
-  Movie(title: 'Dune: Part Two', genre: 'Sci-Fi',
-        rating: 8.5, year: '2024', color: Color(0xFFD4813A)),
-  // ...
+  Movie(
+    title: 'Oppenheimer',
+    genre: 'Drama',
+    rating: 8.9,
+    year: '2023',
+    color: Color(0xFFE8A838),
+  ),
+  Movie(
+    title: 'Dune: Part Two',
+    genre: 'Sci-Fi',
+    rating: 8.5,
+    year: '2024',
+    color: Color(0xFFD4813A),
+  ),
 ];
 
 ListView.builder(
@@ -174,26 +195,33 @@ ListView.builder(
   itemCount: movieList.length,
   itemBuilder: (context, index) {
     final movie = movieList[index];
+
     return ListTile(
       title: Text(movie.title),
-      subtitle: Text('\${movie.genre} · \${movie.year}'),
-      trailing: Row(children: [
-        const Icon(Icons.star, color: Color(0xFFE8A838)),
-        Text(movie.rating.toString()),
-      ]),
+      subtitle: Text('${movie.genre} · ${movie.year}'),
+      trailing: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const Icon(
+            Icons.star,
+            color: Color(0xFFE8A838),
+          ),
+          Text(movie.rating.toString()),
+        ],
+      ),
     );
   },
 )
-\`\`\`
+```
 
-**Penjelasan:**
-\`ListView.builder\` membangun list secara dinamis dari array \`movieList\`. Hanya merender item yang terlihat di layar (lazy rendering). \`itemCount\` diset ke \`movieList.length\` sehingga otomatis menyesuaikan jumlah data. Setiap item menampilkan nomor, judul, genre, tahun, dan rating bintang.
+**Penjelasan:**  
+`ListView.builder` membangun list secara dinamis dari array `movieList`. Widget ini hanya merender item yang terlihat di layar (lazy rendering) sehingga lebih efisien untuk data banyak.
 
 ---
 
 ### 5. ListView.separated (List + Garis Pembatas)
 
-\`\`\`dart
+```dart
 ListView.separated(
   shrinkWrap: true,
   physics: const NeverScrollableScrollPhysics(),
@@ -205,67 +233,86 @@ ListView.separated(
   ),
   itemBuilder: (context, index) {
     return ListTile(
-      leading: CircleAvatar(child: const Icon(Icons.tv)),
+      leading: CircleAvatar(
+        child: const Icon(Icons.tv),
+      ),
       title: Text(series[index]['title']!),
       subtitle: Text(series[index]['ep']!),
       trailing: Container(
-        child: Text(series[index]['status']!,
-          style: TextStyle(color: statusColor)),
+        child: Text(
+          series[index]['status']!,
+          style: TextStyle(color: statusColor),
+        ),
       ),
     );
   },
 )
-\`\`\`
+```
 
-**Penjelasan:**
-\`ListView.separated\` menampilkan 5 series dengan garis pemisah (\`Divider\`) tipis di antara setiap item. Setiap item memiliki status badge berwarna: **Watched** (hijau), **Watching** (emas), **Watchlist** (abu).
+**Penjelasan:**  
+`ListView.separated` menampilkan daftar series dengan garis pemisah (`Divider`) otomatis di antara item sehingga tampilan menjadi lebih rapi dan terstruktur.
 
 ---
 
 ### 6. Stack (Tampilan Bertumpuk)
 
-\`\`\`dart
+```dart
 Stack(
   children: [
-    // Layer 1: Lingkaran dekoratif background
+
+    // Layer 1 : Background dekoratif
     Positioned(
-      right: -20, top: -20,
+      right: -20,
+      top: -20,
       child: Container(
-        width: 150, height: 150,
+        width: 150,
+        height: 150,
         decoration: const BoxDecoration(
           color: Color(0x12E8A838),
           shape: BoxShape.circle,
         ),
       ),
     ),
-    // Layer 2: Konten utama
+
+    // Layer 2 : Konten utama
     Padding(
       padding: const EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(child: const Text('#1 THIS WEEK')),
+          Container(
+            child: const Text('#1 THIS WEEK'),
+          ),
+
           const Text('Dune: Part Two'),
-          Row(children: [
-            const Icon(Icons.star, color: Color(0xFFE8A838)),
-            const Text('8.5'),
-          ]),
+
+          Row(
+            children: [
+              const Icon(
+                Icons.star,
+                color: Color(0xFFE8A838),
+              ),
+              const Text('8.5'),
+            ],
+          ),
         ],
       ),
     ),
-    // Layer 3: Badge NEW di pojok kanan atas
+
+    // Layer 3 : Badge NEW
     Positioned(
-      top: 12, right: 12,
-      child: Container(child: const Text('NEW')),
+      top: 12,
+      right: 12,
+      child: Container(
+        child: const Text('NEW'),
+      ),
     ),
   ],
 )
-\`\`\`
+```
 
-**Penjelasan:**
-\`Stack\` digunakan pada banner "Now Trending" untuk menumpuk 3 layer: (1) lingkaran dekoratif semi-transparan sebagai elemen visual background, (2) konten teks utama di tengah, dan (3) badge "NEW" berwarna merah di pojok kanan atas menggunakan \`Positioned\`. Layer terakhir selalu tampil di atas.
-
----
+**Penjelasan:**  
+`Stack` digunakan untuk menumpuk beberapa widget secara berlapis (Z-axis). Pada project CineList, Stack digunakan untuk membuat banner dengan background dekoratif, konten utama, dan badge "NEW" di pojok kanan atas.
 
 ## D. Hasil Tampilan
 
