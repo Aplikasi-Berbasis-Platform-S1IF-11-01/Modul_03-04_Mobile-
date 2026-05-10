@@ -115,15 +115,14 @@ Menumpuk widget satu di atas yang lain. Positioned digunakan untuk mengatur posi
 ---
 ## 2. Screenshoot Hasil
 ### 2.1 Tampilan Dashboard
-![Dashboard](assets\dashboard1.png)
-
-![Dashboard](assets\dashboard2.png)
+<img src="assets/dashboard1.png" alt="Logo" width="500">
+<img src="assets/dashboard2.png" alt="Logo" width="500">
 
 ### 2.2 Tampilan ListView
-![ListView](assets\listview1.png)
-![Dashboard](assets\listview2.png)
-![Dashboard](assets\listview3.png)
+<img src="assets/listview1.png" alt="Logo" width="500">
+<img src="assets/listview2.png" alt="Logo" width="500">
+<img src="assets/listview3.png" alt="Logo" width="500">
 
 ### 2.3 Tampilan Stack
-![Stack](assets\stack1.png)
-![Stack](assets\stack2.png)
+<img src="assets/stack1.png" alt="Logo" width="500">
+<img src="assets/stack2.png" alt="Logo" width="500">
