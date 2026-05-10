@@ -1,12 +1,12 @@
-<div align="center">
-
-<img src="Logo_Telkom.png" alt="Logo Telkom University" width="150"/>
 
 # LAPORAN PRAKTIKUM
 # APLIKASI BERBASIS PLATFORM
 
-## MODUL 3 & 4 — MOBILE
 
+## MODUL 3 & 4 — MOBILE
+<div align="center">
+
+<img src="Logo_Telkom.png" alt="Logo Telkom University" width="150"/>
 ---
 
 **Disusun Oleh :**
