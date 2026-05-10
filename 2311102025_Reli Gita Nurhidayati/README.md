@@ -1,39 +1,50 @@
 <div align="center">
-# LAPORAN PRAKTIKUM
+
+<br>
+
+# LAPORAN PRAKTIKUM  
 # APLIKASI BERBASIS PLATFORM
 
-
-## MODUL 3 & 4 — MOBILE
-
-
-<img src="Logo_Telkom.png" alt="Logo Telkom University" width="150"/>
 ---
 
-**Disusun Oleh :**
+## MODUL 3 & 4  
+## MOBILE
 
-| | |
-|---|---|
-| **Nama** | Reli Gita Nurhidayati |
-| **NIM** | 2311102025 |
-| **Kelas** | S1 IF-11-REG01 |
+<br><br>
 
-**Dosen Pengampu :**
+<img src="Logo_Telkom.png" alt="Logo Telkom University" width="170"/>
+
+<br><br><br>
+
+## Disusun Oleh
+
+**Reli Gita Nurhidayati**  
+2311102025  
+S1 IF-11-REG01
+
+<br><br>
+
+## Dosen Pengampu
+
 Dimas Fanny Hebrasianto Permadi, S.ST., M.Kom
 
-**Asisten Praktikum :**
-Apri Pandu Wicaksono · Rangga Pradarrell Fathi
+<br><br>
 
----
+## Asisten Praktikum
 
-**LABORATORIUM HIGH PERFORMANCE**
-**FAKULTAS INFORMATIKA**
-**TELKOM UNIVERSITY PURWOKERTO**
-**2026**
+Apri Pandu Wicaksono  
+Rangga Pradarrell Fathi
+
+<br><br><br>
+
+### LABORATORIUM HIGH PERFORMANCE  
+### FAKULTAS INFORMATIKA  
+### TELKOM UNIVERSITY PURWOKERTO  
+### 2026
 
 </div>
 
 ---
-
 ## A. Dasar Teori
 
 Flutter adalah framework UI open-source yang dikembangkan oleh Google untuk membangun aplikasi mobile, web, dan desktop dari satu codebase menggunakan bahasa pemrograman Dart. Flutter menggunakan konsep **widget** sebagai komponen dasar pembentuk antarmuka pengguna.
