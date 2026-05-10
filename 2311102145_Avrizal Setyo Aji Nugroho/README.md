@@ -6,7 +6,7 @@
   <h3>Flutter Modul3&4</h3>
   <br />
   <br />
-  <img src="logo.JPEG" alt="Logo Universitas Telkom Purwokerto" width="280">
+  <img src="logo.jpeg" alt="Logo Universitas Telkom Purwokerto" width="280">
   <br />
   <br />
   <h3>Disusun Oleh :</h3>
