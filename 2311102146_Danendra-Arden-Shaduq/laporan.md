@@ -186,8 +186,8 @@ Untuk mengatur tata letak yang presisi, kode ini memanfaatkan widget Positioned 
 
 ---
 ## 2. Screenshoot Hasil
-![1](images\gambar1.jpeg)
-![2](images\gambar2.jpeg)
-![3](images\gambar3.jpeg)
-![4](images\gambar4.jpeg)
-![5](images\gambar5.jpeg)
+![1](./images/gambar1.jpeg)
+![2](./images/gambar2.jpeg)
+![3](./images/gambar3.jpeg)
+![4](./images/gambar4.jpeg)
+![5](./images/gambar5.jpeg)
