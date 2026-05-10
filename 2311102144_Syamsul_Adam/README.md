@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <div align="center">
   <br />
   <h1>LAPORAN PRAKTIKUM <br>APLIKASI BERBASIS PLATFORM</h1>
@@ -6,7 +6,7 @@
   <h3>TUGAS MODUL 03 & 04 <br> Pengenalan Flutter</h3>
   <br />
   <br />
-  <img src="assets/Logo Tel-u.png" alt="Logo" width="300"> 
+  <img src="Logo Tel-u.png" alt="Logo" width="300"> 
   <br />
   <br />
   <br />
@@ -552,11 +552,11 @@ Pada tampilan utama, widget disusun menggunakan SingleChildScrollView dan Column
 ---
 
 ## Screenshot Hasil
-<img src="1.PNG" width="250">
+<img src="1.png" width="250">
 
-<img src="2.PNG" width="250">
+<img src="2.png" width="250">
 
-<img src="3.PNG" width="250">
+<img src="3.png" width="250">
 =======
 # Modul_03-04_Mobile-
 Kumpulkan tugas sesuai dengan ketentuan seperti biasa
