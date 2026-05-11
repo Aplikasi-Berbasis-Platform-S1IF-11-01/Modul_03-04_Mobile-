@@ -16,7 +16,7 @@ Widget UI
   <br />
 
   <p align="center">
-<img src="aset/logo.jpeg" width="200">
+<img src="aset/logo.png" width="200">
 </p>
 
   <br />
