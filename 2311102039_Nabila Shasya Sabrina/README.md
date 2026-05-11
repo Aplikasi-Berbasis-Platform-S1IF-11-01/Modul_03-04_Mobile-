@@ -422,7 +422,7 @@ Digunakan untuk membuat tampilan bertumpuk, seperti text di atas background grad
 ---
 
 ## 4. Screenshot Hasil
-![](assets/1.jpeg)
-![](assets/2.jpeg)
-![](assets/3.jpeg)
+![](assets/1.png)
+![](assets/2.png)
+![](assets/3.png)
 
