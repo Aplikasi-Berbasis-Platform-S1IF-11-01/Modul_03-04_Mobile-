@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div align="center">
   <br />
   <h1>LAPORAN PRAKTIKUM <br>APLIKASI BERBASIS PLATFORM</h1>
@@ -258,3 +259,7 @@ Praktikum ini telah memberikan pengalaman yang valuable dalam mengembangkan apli
 ---
 
 **Tanggal Pengumpulan:** 11 Mei 2026
+=======
+# Modul_03-04_Mobile-
+Kumpulkan tugas sesuai dengan ketentuan seperti biasa
+>>>>>>> 13f1ed0fee844d34190af9e157dc1831f7e13aa7
