@@ -834,6 +834,7 @@ class SmartHomePage extends StatelessWidget {
 ```
 ## Screenshot Hasil Aplikasi
 Berikut adalah hasil tampilan aplikasi Smart Home yang telah dibuat:
+
 <img src="aset/1.png" width="250">
 <img src="aset/2.png" width="250">
 <img src="aset/3.png" width="250">
