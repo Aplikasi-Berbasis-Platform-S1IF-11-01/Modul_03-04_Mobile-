@@ -24,8 +24,8 @@
   <h3>Disusun Oleh :</h3>
 
   <p>
-    <strong>Kanasya Abdi Aziz</strong><br>
-    <strong>2311102140</strong><br>
+    <strong>Mohammad Alfan Naraya</strong><br>
+    <strong>2311102170</strong><br>
     <strong>S1 IF-11-01</strong>
   </p>
 
@@ -55,12 +55,12 @@
 ### Struktur Project
 
 ```
-flutter_widget_demo/
+praktikum_modul_04/
 ├── lib/
-│   └── main.dart          ← semua kode widget ada di sini
-├── test/
-│   └── widget_test.dart   ← test file
-├── pubspec.yaml
+│   └── main.dart          
+├── assets/                
+├── .gitignore             
+└── pubspec.yaml           
 ```
 
 ### `lib/main.dart`
@@ -78,421 +78,174 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Widget Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
-        useMaterial3: true,
+      title: 'Alfan Lab Modul 4',
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: const Color(0xFF121212),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple, brightness: Brightness.dark),
       ),
-      home: const HomePage(),
+      home: const MainDashboard(),
     );
   }
 }
 
-// ─────────────────────────────────────────
-// Data untuk ListView.builder
-// ─────────────────────────────────────────
-final List<Map<String, dynamic>> buahList = [
-  {'nama': 'Apel', 'emoji': '🍎', 'warna': Colors.red},
-  {'nama': 'Pisang', 'emoji': '🍌', 'warna': Colors.yellow},
-  {'nama': 'Anggur', 'emoji': '🍇', 'warna': Colors.purple},
-  {'nama': 'Mangga', 'emoji': '🥭', 'warna': Colors.orange},
-  {'nama': 'Semangka', 'emoji': '🍉', 'warna': Colors.green},
-];
-
-// ─────────────────────────────────────────
-// HomePage — semua widget di satu halaman
-// ─────────────────────────────────────────
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class MainDashboard extends StatelessWidget {
+  const MainDashboard({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF3F4F8),
       appBar: AppBar(
-        title: const Text(
-          '🧩 Flutter Widget Demo',
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
-        backgroundColor: Colors.indigo,
-        foregroundColor: Colors.white,
-        elevation: 2,
+        title: const Text("FLUTTER WIDGETS", style: TextStyle(letterSpacing: 2, fontWeight: FontWeight.bold)),
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // ══════════════════════════════
-            // 1. CONTAINER
-            // ══════════════════════════════
-            _sectionTitle('1. Container'),
-            const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  width: 90,
-                  height: 90,
-                  decoration: BoxDecoration(
-                    color: Colors.indigo,
-                    borderRadius: BorderRadius.circular(12),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.indigo.withOpacity(0.4),
-                        blurRadius: 8,
-                        offset: const Offset(2, 4),
-                      )
-                    ],
-                  ),
-                  child: const Center(
-                    child: Text('Kotak\nBiru',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                  ),
-                ),
-                Container(
-                  width: 90,
-                  height: 90,
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [Colors.orange, Colors.pink],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                  child: const Center(
-                    child: Text('Gradient\nBulat',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                  ),
-                ),
-                Container(
-                  width: 90,
-                  height: 90,
-                  decoration: BoxDecoration(
-                    color: Colors.teal,
-                    border: Border.all(color: Colors.teal.shade900, width: 3),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: const Center(
-                    child: Text('Border\nTeal',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                  ),
-                ),
-              ],
-            ),
-
-            const SizedBox(height: 24),
-
-            // ══════════════════════════════
-            // 2. GRIDVIEW
-            // ══════════════════════════════
-            _sectionTitle('2. GridView (6 item)'),
-            const SizedBox(height: 8),
-            GridView.count(
-              crossAxisCount: 3,
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-              childAspectRatio: 1.1,
-              children: [
-                _gridItem('📱 App', Colors.blue),
-                _gridItem('🎵 Musik', Colors.purple),
-                _gridItem('📷 Foto', Colors.green),
-                _gridItem('🗺️ Maps', Colors.orange),
-                _gridItem('⚙️ Setting', Colors.grey),
-                _gridItem('💬 Chat', Colors.pink),
-              ],
-            ),
-
-            const SizedBox(height: 24),
-
-            // ══════════════════════════════
-            // 3. LISTVIEW (3 item statis)
-            // ══════════════════════════════
-            _sectionTitle('3. ListView (A, B, C)'),
-            const SizedBox(height: 8),
-            Container(
-              height: 165,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 6)],
-              ),
-              child: ListView(
-                children: const [
-                  ListTile(
-                    leading: CircleAvatar(
-                        backgroundColor: Colors.indigo,
-                        child: Text('A', style: TextStyle(color: Colors.white))),
-                    title: Text('Item A'),
-                    subtitle: Text('Deskripsi item pertama'),
-                  ),
-                  Divider(height: 1),
-                  ListTile(
-                    leading: CircleAvatar(
-                        backgroundColor: Colors.teal,
-                        child: Text('B', style: TextStyle(color: Colors.white))),
-                    title: Text('Item B'),
-                    subtitle: Text('Deskripsi item kedua'),
-                  ),
-                  Divider(height: 1),
-                  ListTile(
-                    leading: CircleAvatar(
-                        backgroundColor: Colors.orange,
-                        child: Text('C', style: TextStyle(color: Colors.white))),
-                    title: Text('Item C'),
-                    subtitle: Text('Deskripsi item ketiga'),
-                  ),
-                ],
-              ),
-            ),
-
-            const SizedBox(height: 24),
-
-            // ══════════════════════════════
-            // 4. LISTVIEW.BUILDER
-            // ══════════════════════════════
-            _sectionTitle('4. ListView.builder (dari array)'),
-            const SizedBox(height: 8),
-            Container(
-              height: 260,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 6)],
-              ),
-              child: ListView.builder(
-                itemCount: buahList.length,
-                itemBuilder: (context, index) {
-                  final item = buahList[index];
-                  return ListTile(
-                    leading: Container(
-                      width: 40,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color: (item['warna'] as Color).withOpacity(0.2),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Center(
-                          child: Text(item['emoji'],
-                              style: const TextStyle(fontSize: 20))),
-                    ),
-                    title: Text(item['nama'],
-                        style: const TextStyle(fontWeight: FontWeight.w600)),
-                    subtitle: Text('Buah ke-${index + 1}'),
-                    trailing: const Icon(Icons.chevron_right),
-                  );
-                },
-              ),
-            ),
-
-            const SizedBox(height: 24),
-
-            // ══════════════════════════════
-            // 5. LISTVIEW.SEPARATED
-            // ══════════════════════════════
-            _sectionTitle('5. ListView.separated (+ garis pembatas)'),
-            const SizedBox(height: 8),
-            Container(
-              height: 220,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 6)],
-              ),
-              child: ListView.separated(
-                itemCount: 4,
-                separatorBuilder: (context, index) => const Divider(
-                  color: Colors.indigo,
-                  thickness: 1.2,
-                  indent: 16,
-                  endIndent: 16,
-                ),
-                itemBuilder: (context, index) {
-                  final labels = ['Senin', 'Selasa', 'Rabu', 'Kamis'];
-                  final icons = [
-                    Icons.looks_one,
-                    Icons.looks_two,
-                    Icons.looks_3,
-                    Icons.looks_4
-                  ];
-                  return ListTile(
-                    leading: Icon(icons[index], color: Colors.indigo),
-                    title: Text('Hari ${labels[index]}'),
-                    subtitle: const Text('Jadwal tersedia'),
-                    trailing: Chip(
-                      label: const Text('Aktif',
-                          style: TextStyle(fontSize: 12, color: Colors.white)),
-                      backgroundColor: Colors.indigo,
-                      padding: EdgeInsets.zero,
-                    ),
-                  );
-                },
-              ),
-            ),
-
-            const SizedBox(height: 24),
-
-            // ══════════════════════════════
-            // 6. STACK
-            // ══════════════════════════════
-            _sectionTitle('6. Stack (tampilan bertumpuk)'),
-            const SizedBox(height: 8),
-            Center(
-              child: SizedBox(
-                width: double.infinity,
-                height: 200,
-                child: Stack(
-                  children: [
-                    // Layer 1 — kotak besar background
-                    Container(
-                      width: double.infinity,
-                      height: 200,
-                      decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                          colors: [Color(0xFF3949AB), Color(0xFF1E88E5)],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                        ),
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                    ),
-                    // Layer 2 — lingkaran dekoratif
-                    Positioned(
-                      top: -20,
-                      right: -20,
-                      child: Container(
-                        width: 120,
-                        height: 120,
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.15),
-                          shape: BoxShape.circle,
-                        ),
-                      ),
-                    ),
-                    // Layer 3 — lingkaran kecil
-                    Positioned(
-                      bottom: 10,
-                      left: 20,
-                      child: Container(
-                        width: 60,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.1),
-                          shape: BoxShape.circle,
-                        ),
-                      ),
-                    ),
-                    // Layer 4 — teks di tengah
-                    const Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.layers, color: Colors.white, size: 40),
-                          SizedBox(height: 8),
-                          Text(
-                            'Stack Widget',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Text(
-                            'Layer ditumpuk di atas layer',
-                            style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 14,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    // Layer 5 — badge di pojok kiri atas
-                    Positioned(
-                      top: 12,
-                      left: 12,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 4),
-                        decoration: BoxDecoration(
-                          color: Colors.orange,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: const Text('NEW',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 11,
-                                fontWeight: FontWeight.bold)),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-
-            const SizedBox(height: 32),
-            Center(
-              child: Text(
-                '✅ Semua widget berhasil ditampilkan!',
-                style: TextStyle(
-                  color: Colors.indigo.shade700,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 10),
+            _buildTile(context, "Container", "Box decoration & Shape", Colors.orangeAccent, const PageContainer()),
+            _buildTile(context, "GridView", "Grid layout 6 items", Colors.pinkAccent, const PageGrid()),
+            _buildTile(context, "ListView", "Static items list", Colors.blueAccent, const PageListStatic()),
+            _buildTile(context, "ListView.builder", "Dynamic array data", Colors.greenAccent, const PageListBuilder()),
+            _buildTile(context, "ListView.separated", "List with separators", Colors.purpleAccent, const PageListSeparated()),
+            _buildTile(context, "Stack", "Overlapping widgets", Colors.redAccent, const PageStack()),
           ],
         ),
       ),
     );
   }
 
-  // Helper: judul section
-  Widget _sectionTitle(String title) {
+  Widget _buildTile(BuildContext context, String title, String sub, Color color, Widget target) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      margin: const EdgeInsets.only(bottom: 12),
       decoration: BoxDecoration(
-        color: Colors.indigo,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(20),
+        gradient: LinearGradient(
+          colors: [color.withOpacity(0.2), Colors.white10],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        border: Border.all(color: Colors.white12),
       ),
-      child: Text(
-        title,
-        style: const TextStyle(
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
-          fontSize: 14,
+      child: ListTile(
+        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => target)),
+        leading: Icon(Icons.circle, color: color, size: 12),
+        title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
+        subtitle: Text(sub, style: const TextStyle(color: Colors.white60, fontSize: 12)),
+        trailing: const Icon(Icons.keyboard_arrow_right, color: Colors.white38),
+      ),
+    );
+  }
+}
+
+// --- DETAIL PAGES ---
+
+class PageContainer extends StatelessWidget {
+  const PageContainer({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("Container")),
+      body: Center(
+        child: Container(
+          width: 150, height: 150,
+          decoration: BoxDecoration(
+            color: Colors.orangeAccent,
+            borderRadius: BorderRadius.circular(15),
+            boxShadow: [BoxShadow(color: Colors.orangeAccent.withOpacity(0.4), blurRadius: 20)],
+          ),
+          child: const Center(child: Text("UI Box", style: TextStyle(fontWeight: FontWeight.bold))),
         ),
       ),
     );
   }
+}
 
-  // Helper: item grid
-  Widget _gridItem(String label, Color color) {
-    return Container(
-      decoration: BoxDecoration(
-        color: color.withOpacity(0.15),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.withOpacity(0.4)),
+class PageGrid extends StatelessWidget {
+  const PageGrid({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("GridView")),
+      body: GridView.count(
+        crossAxisCount: 2,
+        padding: const EdgeInsets.all(20),
+        mainAxisSpacing: 15,
+        crossAxisSpacing: 15,
+        children: List.generate(6, (i) => Container(
+          decoration: BoxDecoration(color: Colors.pinkAccent.withOpacity(0.1), borderRadius: BorderRadius.circular(15), border: Border.all(color: Colors.pinkAccent)),
+          child: Center(child: Text("Item ${i+1}")),
+        )),
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(label.split(' ')[0], style: const TextStyle(fontSize: 24)),
-          const SizedBox(height: 4),
-          Text(
-            label.split(' ')[1],
-            style: TextStyle(
-                fontSize: 12, color: color, fontWeight: FontWeight.w600),
-          ),
+    );
+  }
+}
+
+class PageListStatic extends StatelessWidget {
+  const PageListStatic({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("Standard List")),
+      body: ListView(
+        children: const [
+          ListTile(title: Text("A"), trailing: Icon(Icons.star_border)),
+          ListTile(title: Text("B"), trailing: Icon(Icons.star_border)),
+          ListTile(title: Text("C"), trailing: Icon(Icons.star_border)),
         ],
+      ),
+    );
+  }
+}
+
+class PageListBuilder extends StatelessWidget {
+  const PageListBuilder({super.key});
+  @override
+  Widget build(BuildContext context) {
+    final items = ["PHP", "SQL", "JavaScript", "Dart", "C++"];
+    return Scaffold(
+      appBar: AppBar(title: const Text("Builder List")),
+      body: ListView.builder(
+        itemCount: items.length,
+        itemBuilder: (ctx, i) => ListTile(title: Text(items[i]), leading: const Icon(Icons.code)),
+      ),
+    );
+  }
+}
+
+class PageListSeparated extends StatelessWidget {
+  const PageListSeparated({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("Separated List")),
+      body: ListView.separated(
+        itemCount: 4,
+        separatorBuilder: (ctx, i) => const Divider(color: Colors.purpleAccent, indent: 20, endIndent: 20),
+        itemBuilder: (ctx, i) => ListTile(title: Text("Separated Row $i")),
+      ),
+    );
+  }
+}
+
+class PageStack extends StatelessWidget {
+  const PageStack({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("Stack Widget")),
+      body: Center(
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Container(width: 200, height: 200, color: Colors.grey[900]),
+            Container(width: 100, height: 100, color: Colors.redAccent.withOpacity(0.5)),
+            const Text("Layered", style: TextStyle(letterSpacing: 4)),
+          ],
+        ),
       ),
     );
   }
@@ -504,52 +257,69 @@ class HomePage extends StatelessWidget {
 ### 1. Container
 
 ```dart
-import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
-
-import 'package:flutter_widget_demo/main.dart';
-
-void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
-
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
-  });
+class PageContainer extends StatelessWidget {
+  const PageContainer({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("Container")),
+      body: Center(
+        child: Container(
+          width: 150, 
+          height: 150,
+          decoration: BoxDecoration(
+            color: Colors.orangeAccent,
+            borderRadius: BorderRadius.circular(15),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.orangeAccent.withOpacity(0.4), 
+                blurRadius: 20
+              )
+            ],
+          ),
+          child: const Center(
+            child: Text("UI Box", style: TextStyle(fontWeight: FontWeight.bold))
+          ),
+        ),
+      ),
+    );
+  }
 }
 ```
 
-**Container** widget kotak Flutter yang dapat disesuaikan dengan ukuran, warna, padding, margin, dan dekorasi. Warna background pastel dan sudut membulat ("borderRadius") diatur dengan menggunakan properti "dekorasi" dengan "BoxDecoration". Pada contoh ini, tiga botol diletakkan satu sama lain dalam "Row", masing-masing berwarna pastel (pink, hijau mint, dan peach) dan dilengkapi dengan emoji.
+**Container** Widget Container pada kode tersebut berfungsi sebagai elemen tata letak utama yang memiliki dimensi tetap sebesar 150x150 piksel. Melalui properti BoxDecoration, Container ini diberi warna orangeAccent, sudut yang melengkung menggunakan borderRadius, serta efek bayangan boxShadow untuk memberikan kesan visual yang lebih modern. Di dalamnya terdapat widget Text yang diposisikan di tengah menggunakan widget Center sebagai konten utama dari kotak tersebut. Secara fungsional, implementasi ini menunjukkan bagaimana Container digunakan dalam Flutter untuk membungkus, menghias, dan mengatur posisi elemen visual dalam satu unit komponen.
 
 ---
 
 ### 2. GridView
 
 ```dart
-GridView.count(
-  crossAxisCount: 3,
-  shrinkWrap: true,
-  physics: const NeverScrollableScrollPhysics(),
-  crossAxisSpacing: 10,
-  mainAxisSpacing: 10,
-  childAspectRatio: 1.1,
-  children: [
-    _gridItem('📱 App', Colors.blue),
-  ],
-)
+class PageGrid extends StatelessWidget {
+  const PageGrid({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("GridView")),
+      body: GridView.count(
+        crossAxisCount: 2,
+        padding: const EdgeInsets.all(20),
+        mainAxisSpacing: 15,
+        crossAxisSpacing: 15,
+        children: List.generate(6, (i) => Container(
+          decoration: BoxDecoration(
+            color: Colors.pinkAccent.withOpacity(0.1), 
+            borderRadius: BorderRadius.circular(15), 
+            border: Border.all(color: Colors.pinkAccent)
+          ),
+          child: Center(child: Text("Item ${i+1}")),
+        )),
+      ),
+    );
+  }
+}
 ```
 
-**GridView** digunakan untuk menyusun widget dalam bentuk baris dan kolom. Menggunakan GridView.count dengan crossAxisCount: 3 membuat tata letak 3 kolom yang rapi. Penggunaan shrinkWrap: true dan NeverScrollableScrollPhysics() sangat penting agar GridView dapat diletakkan di dalam SingleChildScrollView tanpa menyebabkan error konflik scrolling.
+**GridView** Widget GridView.count pada kode ini digunakan untuk menyusun elemen dalam bentuk baris dan kolom, dengan jumlah kolom tetap sebanyak dua buah melalui properti crossAxisCount. Tata letaknya diatur menggunakan mainAxisSpacing dan crossAxisSpacing sebesar 15 unit untuk memberikan jarak antar item, serta padding di sekeliling grid agar tampilan tidak menyentuh tepi layar. Setiap item di dalam grid dihasilkan secara dinamis menggunakan List.generate sebanyak enam buah, di mana masing-masing item berupa Container dengan dekorasi garis tepi (border) berwarna pink dan teks yang diposisikan di tengah. Secara keseluruhan, implementasi ini menunjukkan bagaimana Flutter mengelola tata letak dua dimensi yang responsif dan teratur.
 
 ---
 
@@ -576,65 +346,70 @@ ListView(
 ### 4. ListView.builder
 
 ```dart
-ListView.builder(
-  itemCount: buahList.length,
-  itemBuilder: (context, index) {
-    final item = buahList[index];
-    return ListTile(
-      leading: Container(
-        decoration: BoxDecoration(
-          color: (item['warna'] as Color).withOpacity(0.2),
-          shape: BoxShape.circle,
-        ),
-        child: Center(child: Text(item['emoji'])),
+class PageListBuilder extends StatelessWidget {
+  const PageListBuilder({super.key});
+  @override
+  Widget build(BuildContext context) {
+    final items = ["PHP", "SQL", "JavaScript", "Dart", "C++"];
+    return Scaffold(
+      appBar: AppBar(title: const Text("Builder List")),
+      body: ListView.builder(
+        itemCount: items.length,
+        itemBuilder: (ctx, i) => ListTile(title: Text(items[i]), leading: const Icon(Icons.code)),
       ),
-      title: Text(item['nama']),
-      subtitle: Text('Buah ke-${index + 1}'),
     );
-  },
-)
+  }
+}
 ```
 
-**ListView.builder** adalah cara efisien untuk membuat daftar berdasarkan data array (buahList). Berbeda dengan ListView biasa, builder hanya merender item yang terlihat di layar (lazy loading). Kode ini secara dinamis mengambil data nama, emoji, dan warna dari list untuk setiap barisnya.
+**ListView.builder** digunakan untuk menampilkan daftar data secara dinamis dengan lebih efisien karena hanya merender item yang muncul pada area pandang layar saja. Pada kode ini, builder mengambil data dari sebuah array yang berisi nama-nama bahasa pemrograman seperti PHP dan SQL, kemudian secara otomatis memetakan setiap elemen menjadi widget ListTile lengkap dengan ikon kode sebagai penanda. Metode ini sangat ideal digunakan untuk menangani kumpulan data dalam jumlah besar karena dapat menghemat penggunaan memori perangkat secara signifikan.
 
 ### 5. ListView.separated
 
 ```dart
-ListView.separated(
-  itemCount: 4,
-  separatorBuilder: (context, index) => const Divider(
-    color: Colors.indigo,
-    thickness: 1.2,
-    indent: 16,
-    endIndent: 16,
-  ),
-  itemBuilder: (context, index) {
-    // ... render item hari
-  },
-)
+class PageListSeparated extends StatelessWidget {
+  const PageListSeparated({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("Separated List")),
+      body: ListView.separated(
+        itemCount: 4,
+        separatorBuilder: (ctx, i) => const Divider(color: Colors.purpleAccent, indent: 20, endIndent: 20),
+        itemBuilder: (ctx, i) => ListTile(title: Text("Separated Row $i")),
+      ),
+    );
+  }
+}
 ```
 
-**ListView.separated** memiliki fungsi yang mirip dengan builder, namun menyertakan separatorBuilder. Widget ini digunakan untuk menyisipkan pemisah otomatis antar item. Pada laporan ini, digunakan untuk membuat daftar jadwal harian yang dipisahkan oleh garis Divider berwarna indigo yang rapi.
+**ListView.separated** Widget ListView.separated memiliki cara kerja yang serupa dengan tipe builder, namun ditambahkan dengan fungsi separatorBuilder untuk menyisipkan elemen dekoratif di antara setiap item. Dalam implementasi tugas ini, pemisah yang digunakan adalah widget Divider berwarna ungu (purpleAccent) yang memberikan batas visual yang tegas dan rapi antar baris. Pendekatan ini memastikan bahwa elemen pembatas tidak muncul di awal atau akhir daftar, melainkan tepat berada di tengah sebagai pemisah antar komponen data.
 
 ### 6. Stack
 
 ```dart
-Stack(
-  children: [
-    // Layer 1: Background Gradient
-    Container(decoration: BoxDecoration(gradient: ...)),
-    // Layer 2: Lingkaran Dekoratif
-    Positioned(right: -20, top: -20, child: _circleDecoration(...)),
-    // Layer 3: Teks Utama
-    const Positioned(top: 40, left: 24, child: Text('Flutter Stack', ...)),
-    // Layer 4: Floating Badge
-    Positioned(right: 20, bottom: 20, child: _floatingBadge(...)),
-  ],
-)
+class PageStack extends StatelessWidget {
+  const PageStack({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("Stack Widget")),
+      body: Center(
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Container(width: 200, height: 200, color: Colors.grey[900]),
+            Container(width: 100, height: 100, color: Colors.redAccent.withOpacity(0.5)),
+            const Text("Layered", style: TextStyle(letterSpacing: 4)),
+          ],
+        ),
+      ),
+    );
+  }
+}
 ```
 
-**Stack** memungkinkan penumpukan widget secara berlapis. Widget yang ditulis paling bawah dalam kode akan muncul di lapisan paling atas pada layar. Widget Positioned digunakan untuk mengatur koordinat elemen secara spesifik di dalam area Stack, seperti meletakkan lingkaran dekoratif atau badge di pojok tertentu.
-
+**Stack** Widget Stack pada kode tersebut digunakan untuk menempatkan beberapa widget secara berlapis satu di atas yang lain dalam urutan indeks dari bawah ke atas. Implementasi ini menggunakan properti alignment: Alignment.center untuk memastikan semua elemen di dalamnya, mulai dari kotak dasar berwarna abu-abu gelap, kotak merah transparan di lapisan tengah, hingga teks "Layered" di lapisan paling depan, berada tepat di titik tengah layar. Penggunaan Stack ini mendemonstrasikan cara membuat tata letak yang kompleks di mana elemen-elemen dapat saling bertumpuk untuk menciptakan efek visual yang lebih dalam dan bervariasi.
 ---
 
 ## Screenshot Hasil
