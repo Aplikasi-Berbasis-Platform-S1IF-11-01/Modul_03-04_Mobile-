@@ -16,7 +16,7 @@
 
 **Disusun oleh:**  
 **Syafanida Khakiki**  
-**2311102006**
+**2311102005**
 
 <br>
 
