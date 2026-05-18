@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <div align="center">
 
 ## LAPORAN PRAKTIKUM <br> APLIKASI BERBASIS PLATFORM
